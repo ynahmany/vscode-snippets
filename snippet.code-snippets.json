@@ -4,15 +4,15 @@
 		"body": [
 			"import React from 'react';",
 			"",
-			"interface I${TM_FILENAME/(.*)\\..+$/$1/} {}",
+			"interface I${TM_FILENAME_BASE} {}",
 			"",
-			"const ${TM_FILENAME/(.*)\\..+$/$1/}: React.FC<I${TM_FILENAME/(.*)\\..+$/$1/}> = ({}) => {",
+			"const ${TM_FILENAME_BASE}: React.FC<I${TM_FILENAME_BASE}> = ({}) => {",
 			"  ",
 			" return (",
 			"   null",
 			" );",
 			"}",
-			"export default ${TM_FILENAME/(.*)\\..+$/$1/};"
+			"export default ${TM_FILENAME_BASE};"
 		],
 		"description": "Function component in React using typescript"
 	},
@@ -27,5 +27,28 @@
 			"});",
 		],
 		"description": "Test description with the proper placeholders."
+	},
+	"New story for storybook": {
+		"prefix": "story",
+		"body": [
+			"import React from 'react';",
+			"import { storiesOf } from '@storybook/react';",
+			"import { text } from '@storybook/addon-knobs';",
+			"import ${TM_FILENAME_BASE} from './index.tsx';",
+			"import { action } from '@storybook/addon-actions';",
+			"",
+			"",
+			"const stories = storiesOf(${TM_FILENAME/(.*)\\..+$/$1/}, module);",
+			"",
+			"stories.add('Single', () => {",
+			" return (",
+			"  <${TM_FILENAME/(.*)\\..+$/$1/}",
+			"    style={{ width: 123 }}",
+			"    text={text('Text', txt)}",
+			"    onRemove={action('onRemove')}",
+			"  />",
+			" );",
+			"});",
+		]
 	}
 }
