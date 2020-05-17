@@ -53,5 +53,13 @@
 			"});",
 			""
 		]
+	},
+	"Simple arrow function": {
+		"prefix": "af",
+		"body": [
+			"() => {",
+			"  ",
+			"}"
+		]
 	}
 }
