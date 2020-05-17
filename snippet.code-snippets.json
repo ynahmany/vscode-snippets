@@ -12,7 +12,8 @@
 			"   null",
 			" );",
 			"}",
-			"export default ${TM_FILENAME_BASE};"
+			"export default ${TM_FILENAME_BASE};",
+			""
 		],
 		"description": "Function component in React using typescript"
 	},
@@ -21,10 +22,11 @@
 		"body": [
 			"describe('[unit of work]', () => {",
 			"  describe('[scenario/context - function description]', () => {",
-			"   it('should [expected behavior]', () => {",
-			"   });",
+			"    it('should [expected behavior]', () => {",
+			"    });",
 			"  });",
 			"});",
+			""
 		],
 		"description": "Test description with the proper placeholders."
 	},
@@ -34,21 +36,22 @@
 			"import React from 'react';",
 			"import { storiesOf } from '@storybook/react';",
 			"import { text } from '@storybook/addon-knobs';",
-			"import ${TM_FILENAME_BASE} from './index.tsx';",
+			"import ${TM_FILENAME/(.*)\\..+$/$1/} from './index.tsx';",
 			"import { action } from '@storybook/addon-actions';",
 			"",
 			"",
 			"const stories = storiesOf(${TM_FILENAME/(.*)\\..+$/$1/}, module);",
 			"",
 			"stories.add('Single', () => {",
-			" return (",
-			"  <${TM_FILENAME/(.*)\\..+$/$1/}",
-			"    style={{ width: 123 }}",
-			"    text={text('Text', txt)}",
-			"    onRemove={action('onRemove')}",
-			"  />",
-			" );",
+			"  return (",
+			"    <${TM_FILENAME/(.*)\\..+$/$1/}",
+			"      style={{ width: 123 }}",
+			"      text={text('Text', txt)}",
+			"      onRemove={action('onRemove')}",
+			"    />",
+			"  );",
 			"});",
+			""
 		]
 	}
 }
