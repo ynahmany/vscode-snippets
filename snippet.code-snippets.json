@@ -7,11 +7,11 @@
 			"interface I${TM_FILENAME_BASE} {}",
 			"",
 			"const ${TM_FILENAME_BASE}: React.FC<I${TM_FILENAME_BASE}> = ({}) => {",
-			"  ",
-			" return (",
-			"   null",
-			" );",
-			"}",
+			"",
+			"  return (",
+			"    null",
+			"  );",
+			"};",
 			"export default ${TM_FILENAME_BASE};",
 			""
 		],
@@ -57,9 +57,22 @@
 	"Simple arrow function": {
 		"prefix": "af",
 		"body": [
-			"() => {",
-			"  ",
-			"}"
+			"() => {}"
+		]
+	},
+	"Typed function": {
+		"prefix": "tfunction",
+		"body": [
+			": () => void"
+		]
+	},
+	"Async Typed": {
+		"prefix": "asyncType",
+		"body": [
+			"FETCH_${CLIPBOARD} = 'demos/FETCH_${CLIPBOARD}',",
+			"FETCH_${CLIPBOARD}_REQUEST = 'demos/FETCH_${CLIPBOARD}_REQUEST',",
+			"FETCH_${CLIPBOARD}_SUCCESS = 'demos/FETCH_${CLIPBOARD}_SUCCESS',",
+			"FETCH_${CLIPBOARD}_FAILURE = 'demos/FETCH_${CLIPBOARD}_FAILURE',"
 		]
 	}
 }
